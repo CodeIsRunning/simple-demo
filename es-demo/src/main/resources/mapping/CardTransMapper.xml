@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xfliu.dao.mapper.CardTransMapper">
+    <resultMap id="BaseResultMap" type="com.xfliu.dao.model.CardTrans">
+        <!--@mbg.generated-->
+        <!--@Table card_trans-->
+        <id column="card_no" jdbcType="VARCHAR" property="cardNo"/>
+        <result column="pid" jdbcType="VARCHAR" property="pid"/>
+        <result column="card_status" jdbcType="INTEGER" property="cardStatus"/>
+        <result column="result_time" jdbcType="TIMESTAMP" property="resultTime"/>
+        <result column="update_time_trans" jdbcType="TIMESTAMP" property="updateTimeTrans"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        card_no, pid, card_status, result_time, update_time_trans, update_time
+    </sql>
+    <select id="selectAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from ${tableName}
+    </select>
+
+    <select id="selectByCardNo" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from ${tableName}
+        where card_no = #{cardNo,jdbcType=VARCHAR}
+    </select>
+</mapper>
