@@ -15,7 +15,7 @@ public class OssConfig {
 
     String accessKey = "";
     String secretKey = "";
-    String endPoint = "http://hb4oss.xstore.ctyun.cn/";
+    String endPoint = "";
 
     @Bean(name = "amazonS3")
     public AmazonS3 ossconfig() {
