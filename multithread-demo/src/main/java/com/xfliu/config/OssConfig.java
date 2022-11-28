@@ -27,7 +27,7 @@ public class OssConfig {
         //设置Socket层超时时间
         clientConfiguration.setSocketTimeout(50000);
         //设置建立连接的超时时间
-        clientConfiguration.setConnectionTimeout(50000);
+        clientConfiguration.setConnectionTimeout(5000);
         AwsClientBuilder.EndpointConfiguration endpointConfiguration = new AwsClientBuilder.EndpointConfiguration(
                 endPoint, Regions.DEFAULT_REGION.getName());
         AmazonS3 s3 = AmazonS3ClientBuilder.standard()
