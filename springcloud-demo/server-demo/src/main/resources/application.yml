@@ -1,9 +1,15 @@
 server:
-  port: 8080
+  port: 8082
 spring:
   application:
     name: server-demo
   cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+        port: 8719
+        client-ip: 127.0.0.1
+      eager: true
     nacos:
       config:
         file-extension: yaml
