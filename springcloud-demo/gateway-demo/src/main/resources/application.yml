@@ -1,0 +1,26 @@
+# 应用名称
+server:
+  port: 8081
+spring:
+  application:
+    name: gateway-demo
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848
+        service: gateway-demo
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: server-demo
+          uri: lb://server-demo
+          predicates:
+            - Path=/server-demo/**
+          filters:
+            - StripPrefix=1
+            - JWTAuthFilter

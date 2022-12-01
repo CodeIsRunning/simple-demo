@@ -34,11 +34,14 @@
         <module>es-demo</module>
         <module>dingding-demo</module>
         <module>xxl-job-demo</module>
+        <module>springcloud-demo</module>
 
     </modules>
 
     <dependencyManagement>
         <dependencies>
+
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
