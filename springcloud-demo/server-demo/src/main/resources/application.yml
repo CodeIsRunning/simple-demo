@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: server-demo
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848
+        service: server-demo
